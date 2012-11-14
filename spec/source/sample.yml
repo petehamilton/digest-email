@@ -1,0 +1,19 @@
+header:
+  title:
+  subtitle: November 12th 2012
+  subsubtitle:
+
+items:
+    - list_title: Awesome Email Digests
+      image: images/email.jpg
+      title: We have new email digests!
+      body: This is some body content
+
+    - list_title: Robotics Hackathon
+      image: images/skynet.jpg
+      title: These aren't the droids you're looking for
+      body: Imperial is pretty damn awesome. Robots are awesomer.
+
+footer:
+  signature: -- DoCSoc Committee 2012
+  sponsors_image: images/sponsors.jpg # Bottom Sponsor Banner
