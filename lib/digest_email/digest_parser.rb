@@ -8,9 +8,9 @@ module DigestEmail
       begin
         validate_indices(digest, ["header", "items", "footer"])
 
-        header = DigestEmail::DigestHeader.new parse_header(digest["header"])
-        body   = DigestEmail::DigestBody.new parse_items(digest["items"])
-        footer = DigestEmail::DigestFooter.new parse_footer(digest["footer"])
+        header = parse_header(digest["header"])
+        body   = parse_items(digest["items"])
+        footer = parse_footer(digest["footer"])
 
         DigestEmail::Digest.new(header, body, footer)
       rescue Exception => e
@@ -18,13 +18,19 @@ module DigestEmail
       end
     end
 
+    # No point checking for errors, want to check validate_index
+    # is called for title. Ruby equivalent of spy
+    # 1. Stub DigestHeader
+    # 2. Spy validate_index
+    # 3. Test that validate_index is called
+    # 4. Test the DigestHeader stub is called
     def self.parse_header(header)
       validate_index(header, "title")
-      header
+      DigestEmail::DigestHeader.new header
     end
 
     def self.parse_items(items)
-      items.map{|item| parse_item(item)}
+      DigestEmail::DigestItems.new items.map{|item| parse_item(item)}
     end
 
     def self.parse_item(item)

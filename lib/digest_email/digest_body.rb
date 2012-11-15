@@ -1,17 +1,13 @@
 require File.dirname(__FILE__) + '/digest_element'
 
 module DigestEmail
-  class DigestBody < DigestElement
-    def initialize(body)
-      @body = body
-    end
-
-    def render
-      # body markdown -> HTML
+  class DigestItems < DigestElement
+    def initialize(items)
+      @children = items
     end
 
     def wrap(inner)
-      "<div class='digest-email-body'>#{inner}</div>"
+      "<div class='digest-email-items'>#{inner}</div>"
     end
   end
 end
