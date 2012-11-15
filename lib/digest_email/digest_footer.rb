@@ -3,6 +3,7 @@ require File.dirname(__FILE__) + '/digest_element'
 module DigestEmail
   class DigestFooter < DigestElement
     def initialize(footer)
+      super()
       @signature = footer["signature"]
       @sponsors_image = footer["sponsors_image"]
     end

@@ -5,6 +5,7 @@ module DigestEmail
     attr_accessor :title, :subtitle, :subsubtitle
 
     def initialize(header)
+      super()
       @title = header["title"]
 
       if header.has_key? "subtitle"

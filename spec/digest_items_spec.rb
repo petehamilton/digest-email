@@ -12,15 +12,14 @@ describe DigestItems do
         i
       end
 
-      puts @items.inspect
-
       @digest_items = DigestItems.new(@items)
+      puts @items.inspect
+      puts @digest_items.inspect
     end
 
     it "renders each digest item" do
       @digest_items.render
       @items.each do |item|
-        puts item.inspect
         item.should have_received(:render)
       end
     end
