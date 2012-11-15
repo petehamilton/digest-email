@@ -1,4 +1,5 @@
 module DigestParserValidator
+
   # Invalidates index if missing or empty, taking advantage of lazy eval
   def valid_index?(item, index)
     item.has_key?(index) and !item[index].nil? and !item[index].empty?
@@ -17,4 +18,5 @@ module DigestParserValidator
       validate_index(item, index)
     end
   end
+
 end

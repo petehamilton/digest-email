@@ -1,8 +1,11 @@
 require 'rubygems'
 require 'bundler/setup'
 
-require 'digest_email' # and any other gems you need
+require "mocha_standalone"
+require "bourne"
+
+require 'digest_email'
 
 RSpec.configure do |config|
-  # some (optional) config here
+  config.mock_with :mocha
 end

@@ -41,18 +41,15 @@ describe DigestParser do
     end
 
     describe '.validate_indices' do
-      it "should pass a valid hash" do
-        hash = {"key" => "value", "key2" => "value2"}
-        expect { DigestParser.validate_indices(hash, ["key", "key2"]) }.to_not raise_error
-      end
+      it "should validate a list of indices" do
+        DigestParser.stubs(:validate_index)
 
-      # Context Invalid Hash
-      # DRY keys and use each for hashes
-      it "should error on invalid hash" do
-        expect { DigestParser.validate_indices({}, ["key", "key2"]) }.to raise_error
-        expect { DigestParser.validate_indices({"key" => ""}, ["key", "key2"]) }.to raise_error
-        expect { DigestParser.validate_indices({"key" => nil}, ["key", "key2"]) }.to raise_error
-        expect { DigestParser.validate_indices({"key" => "value"}, ["key", "key2"]) }.to raise_error
+        hash = {}
+        keys = ["a", "b", "c"]
+        DigestParser.validate_indices(hash, keys)
+        keys.each do |k|
+          DigestParser.should have_received(:validate_index).with(hash, k)
+        end
       end
     end
   end

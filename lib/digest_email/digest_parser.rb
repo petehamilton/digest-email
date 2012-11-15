@@ -18,12 +18,6 @@ module DigestEmail
       end
     end
 
-    # No point checking for errors, want to check validate_index
-    # is called for title. Ruby equivalent of spy
-    # 1. Stub DigestHeader
-    # 2. Spy validate_index
-    # 3. Test that validate_index is called
-    # 4. Test the DigestHeader stub is called
     def self.parse_header(header)
       validate_index(header, "title")
       DigestEmail::DigestHeader.new header
