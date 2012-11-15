@@ -1,8 +1,8 @@
 require File.dirname(__FILE__) + '/digest_element'
 
 module DigestEmail
-  class DigestBody < DigestElement
-    def initialize(body)
+  class Digest < DigestElement
+    def initialize(header, body, footer)
     end
   end
 end

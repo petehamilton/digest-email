@@ -1,44 +1,40 @@
+require File.dirname(__FILE__) + '/digest_parser_validator'
+
 module DigestEmail
   class DigestParser
+    extend DigestParserValidator
+
     def self.parse(digest)
       begin
-        raise "Missing Digest Header" unless digest.has_key? "header"
-        raise "Missing Digest Body" unless digest.has_key? "items"
-        raise "Missing Digest Footer" unless digest.has_key? "footer"
+        validate_indices(digest, ["header", "items", "footer"])
 
         header = DigestEmail::DigestHeader.new parse_header(digest["header"])
         body   = DigestEmail::DigestBody.new parse_items(digest["items"])
         footer = DigestEmail::DigestFooter.new parse_footer(digest["footer"])
+
+        DigestEmail::Digest.new(header, body, footer)
       rescue Exception => e
         raise "Failed to parse digest: #{e.message}"
       end
     end
 
     def self.parse_header(header)
-      raise "Bad digest, no title" unless header.has_key? "title"
-
+      validate_index(header, "title")
       header
     end
 
     def self.parse_items(items)
-      raise "Missing Digest Items" if items.empty?
-
       items.map{|item| parse_item(item)}
     end
 
     def self.parse_item(item)
-      raise "Missing Item List Title" unless item.has_key? "list_title"
-      raise "Missing Item Image" unless item.has_key? "image"
-      raise "Missing Item Title" unless item.has_key? "title"
-      raise "Missing Item Body" unless item.has_key? "body"
+      validate_indices(item, ["list_title", "image", "title", "body"])
 
       DigestEmail::DigestItem.new item
     end
 
     def self.parse_footer(footer)
-      raise "Missing Signature" unless footer.has_key? "signature"
-      raise "Missing Sponsors Image" unless footer.has_key? "sponsors_image"
-
+      validate_indices(footer, ["signature", "sponsors_image"])
       DigestEmail::DigestFooter.new footer
     end
   end
