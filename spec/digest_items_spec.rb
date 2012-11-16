@@ -13,8 +13,6 @@ describe DigestItems do
       end
 
       @digest_items = DigestItems.new(@items)
-      puts @items.inspect
-      puts @digest_items.inspect
     end
 
     it "renders each digest item" do
