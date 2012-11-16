@@ -13,11 +13,13 @@ module DigestEmail
     end
 
     def render
+      parsed_body = Kramdown::Document.new(@body).to_html
+
       html  = [
         render_image,
         "<div class=\"digest-email-item-content-container\">",
           "<div class=\"digest-email-item-title\">#{@title}</div>",
-          "<div class=\"digest-email-item-body\">#{@body}</div>",
+          "<div class=\"digest-email-item-body\">#{parsed_body}</div>",
         "</div>"
       ]
 
