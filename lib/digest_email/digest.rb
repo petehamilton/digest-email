@@ -2,8 +2,13 @@ require 'digest_email/digest_element'
 
 module DigestEmail
   class Digest < DigestElement
+
+
     def initialize(header, items, footer)
-      @children = [header, items, footer]
+      @header = header
+      @items = items
+      @footer = footer
+      @children = [@header, @items, @footer]
     end
 
     def wrap(inner)

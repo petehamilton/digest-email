@@ -2,6 +2,8 @@ require 'digest_email/digest_element'
 
 module DigestEmail
   class DigestFooter < DigestElement
+    attr_accessor :signature, :sponsors_image
+
     def initialize(footer)
       super()
       @signature = footer["signature"]

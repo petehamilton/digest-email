@@ -2,6 +2,8 @@ require 'digest_email/digest_element'
 
 module DigestEmail
   class DigestItem < DigestElement
+    attr_accessor :list_title, :title, :image, :body
+
     def initialize(item)
       super()
       @list_title = item["list_title"]
