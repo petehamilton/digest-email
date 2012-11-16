@@ -1,4 +1,4 @@
-require File.dirname(__FILE__) + '/digest_element'
+require 'digest_email/digest_element'
 
 module DigestEmail
   class DigestItem < DigestElement
