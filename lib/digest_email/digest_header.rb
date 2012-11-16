@@ -36,7 +36,7 @@ module DigestEmail
                  "</div>"]
       end
 
-      wrap html.join
+      wrap html.join("\n")
     end
 
     def wrap(inner)

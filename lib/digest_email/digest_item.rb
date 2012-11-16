@@ -21,14 +21,14 @@ module DigestEmail
         "</div>"
       ]
 
-      wrap html.join
+      wrap html.join("\n")
     end
 
     def render_image
       html  = ["<div class=\"digest-email-item-image\">"]
       html << ["<img src=\"#{@image}\"/>"]
       html << ["</div>"]
-      html.join
+      html.join("\n")
     end
 
     def wrap(inner)

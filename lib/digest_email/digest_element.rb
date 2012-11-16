@@ -8,7 +8,7 @@ module DigestEmail
 
     # Render each child, join all the html and wrap it
     def render
-      wrap @children.map(&:render).join
+      wrap @children.map(&:render).join("\n")
     end
 
     # By default don't wrap with anything
