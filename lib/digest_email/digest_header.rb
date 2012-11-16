@@ -36,6 +36,8 @@ module DigestEmail
                  "</div>"]
       end
 
+      html << ["<div class=\"digest-email-dot-seperator\"></div>"]
+
       wrap html.join("\n")
     end
 
