@@ -7,7 +7,10 @@ module DigestEmail
     end
 
     def wrap(inner)
-      "<div class=\"digest\">#{inner}</div>"
+      template_filename = "templates/default.html"
+      template_file = File.expand_path('../../../templates/default.html', __FILE__)
+      template = File.read template_file
+      template.gsub("{{content}}", "<div class=\"digest\">#{inner}</div>")
     end
   end
 end
