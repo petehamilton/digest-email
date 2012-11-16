@@ -34,7 +34,7 @@ module DigestEmail
     end
 
     def wrap(inner)
-      "<div class=\"digest-email-item\">#{inner}</div>"
+      "<div class=\"digest-email-item\">#{inner}<div class=\"clear\"></div></div>"
     end
   end
 end

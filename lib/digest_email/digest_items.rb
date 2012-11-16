@@ -17,7 +17,7 @@ module DigestEmail
 
     def render
       rendered_items = @children.map(&:render)
-      wrap rendered_items.join "\n<div class=\"digest-email-item-seperator\"></div>\n"
+      wrap rendered_items.join "\n<div class=\"digest-email-dot-seperator\"></div>\n"
     end
 
     def wrap(inner)
