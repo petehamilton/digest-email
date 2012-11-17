@@ -1,5 +1,4 @@
 require 'digest_email/digest_element'
-require 'kramdown'
 
 class Array
   # As per http://stackoverflow.com/questions/3676027

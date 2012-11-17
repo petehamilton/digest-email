@@ -1,4 +1,5 @@
 require 'digest_email/digest_element'
+require 'kramdown'
 
 module DigestEmail
   class DigestHeader < DigestElement
@@ -22,17 +23,21 @@ module DigestEmail
     end
 
     def render
-      html = ["<div class=\"digest-email-header-title\">#{@title}</div>"]
+      parsed_title = Kramdown::Document.new(@title).to_html
+
+      html = ["<div class=\"digest-email-header-title\">#{parsed_title}</div>"]
 
       unless @subtitle.nil?
+        parsed_subtitle = Kramdown::Document.new(@subtitle).to_html
         html << ["<div class=\"digest-email-header-subtitle\">",
-                 @subtitle,
+                 parsed_subtitle,
                  "</div>"]
       end
 
       unless @subsubtitle.nil?
+        parsed_subsubtitle = Kramdown::Document.new(@subsubtitle).to_html
         html << ["<div class=\"digest-email-header-subsubtitle\">",
-                 @subsubtitle,
+                 parsed_subsubtitle,
                  "</div>"]
       end
 

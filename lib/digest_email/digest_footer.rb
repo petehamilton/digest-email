@@ -1,4 +1,5 @@
 require 'digest_email/digest_element'
+require 'kramdown'
 
 module DigestEmail
   class DigestFooter < DigestElement
@@ -11,9 +12,10 @@ module DigestEmail
     end
 
     def render
+      parsed_signature = Kramdown::Document.new(@signature).to_html
       html  = [
         "<div class=\"digest-email-dot-seperator\"></div>",
-        "<div class=\"digest-email-footer-signature\"><div>#{@signature}</div></div>",
+        "<div class=\"digest-email-footer-signature\"><div>#{parsed_signature}</div></div>",
         render_sponsors_image
       ]
 
