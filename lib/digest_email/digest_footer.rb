@@ -13,7 +13,7 @@ module DigestEmail
     def render
       html  = [
         "<div class=\"digest-email-dot-seperator\"></div>",
-        "<div class=\"digest-email-footer-signature\">#{@signature}</div>",
+        "<div class=\"digest-email-footer-signature\"><div>#{@signature}</div></div>",
         render_sponsors_image
       ]
 

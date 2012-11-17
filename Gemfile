@@ -4,6 +4,8 @@ source 'https://rubygems.org'
 gemspec
 
 gem 'kramdown'
+gem 'premailer'
+gem 'nokogiri' # For premailer
 
 group :test do
   gem 'rspec'

@@ -30,6 +30,10 @@ opt_parser = OptionParser.new do |opt|
     options[:template] = template
   end
 
+  opt.on("-w","--warnings","if present, will show premailer warnings") do |warnings|
+    options[:warnings] = warnings
+  end
+
   opt.on("-h","--help","help") do
     puts opt_parser
   end
@@ -47,11 +51,12 @@ begin
       digest_yaml = YAML.load_file(options[:file])
 
       template_file = options[:template] || File.join(File.dirname(__FILE__), "..", "templates/default.html")
+      warnings = options[:warnings] || false
       template = File.read template_file
 
       d = DigestEmail.parse(digest_yaml)
 
-      File.open(options[:output], 'w') { |file| file.write(d.render template) }
+      File.open(options[:output], 'w') { |file| file.write(d.render template, warnings) }
     rescue Exception => e
       puts "Error generating digest: #{e}"
       exit
