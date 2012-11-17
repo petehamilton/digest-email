@@ -57,6 +57,7 @@ begin
       d = DigestEmail.parse(digest_yaml)
 
       File.open(options[:output], 'w') { |file| file.write(d.render template, warnings) }
+      puts "#{Time.now} - Done. Digest saved as #{options[:output]}"
     rescue Exception => e
       puts "Error generating digest: #{e}"
       exit
