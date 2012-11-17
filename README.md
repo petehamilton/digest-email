@@ -1,6 +1,6 @@
 # DigestEmail
 
-This is a project put together in a weekend by [Peter Hamilton](http://peterhamilton.github.com).
+This is a project put together over a few evenings by [Peter Hamilton](http://peterhamilton.github.com).
 The overall aim was to simplify the process of generating weekly Computing Society emails for students.
 
 There were several reasons for making this gem:
