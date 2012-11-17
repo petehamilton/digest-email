@@ -3,13 +3,13 @@
 This is a project put together in a weekend by [Peter Hamilton](http://peterhamilton.github.com).
 The overall aim was to simplify the process of generating weekly Computing Society emails for students.
 
-The result is a gem which turns [this](https://gist.github.com/4092848) into [this](http://docsoc.s3.amazonaws.com/sample/sample_digest_email.html)
-
-More specifically the aims were:
+There were several reasons for making this gem:
 - **Fun** - It's not often I have time to make side projects right now. This was a nice non-uni related hack
 - **Learning** - I wanted to do several things - learn more about TDD, create a command line ruby gem etc. This seemed like a great opportunity to tick the boxes
 - **Consistency** - Currently everyone provides their digest info in random formats all over the place. Now they can provide the yaml config for their digest entry and I can just combine them all and generate a digest email
 - **Legacy** - I wanted something future society members could use and improve on
+
+The result is a gem which turns [this](https://gist.github.com/4092848) into [this](http://docsoc.s3.amazonaws.com/sample/sample_digest_email.html)
 
 ## Background
   I'm responsible for collating together around 4-6 notices which need to go out to our students each week for jobs, clubs, meetings and events. I currently have to write raw HTML for each email which involves a lot of Copy-Paste and inline styles and this weekend I decided to find a way to automate the process.
