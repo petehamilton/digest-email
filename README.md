@@ -51,7 +51,7 @@ Contains a list of items, each of which must contain:
     - `title` - The title for the item
     - `body` - The body for the item
 
-Fields are parsed using markdown so the body can be easily customised
+Fields are parsed as markdown using [Maruku](https://github.com/bhollis/maruku) so the body can be easily customised
 
 - Footer
 Must contain:

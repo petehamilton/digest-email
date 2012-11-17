@@ -1,5 +1,5 @@
 require 'digest_email/digest_element'
-require 'kramdown'
+require 'maruku'
 
 module DigestEmail
   class DigestItem < DigestElement
@@ -14,8 +14,8 @@ module DigestEmail
     end
 
     def render
-      parsed_title = Kramdown::Document.new(@title).to_html
-      parsed_body = Kramdown::Document.new(@body).to_html
+      parsed_title = Maruku.new(@title).to_html
+      parsed_body = Maruku.new(@body).to_html
 
       html  = [
         render_image,
