@@ -8,6 +8,7 @@ describe Digest do
 
       @items = mock()
       @items.stubs(:render).returns("")
+      @items.stubs(:children).returns([])
 
       @footer = mock()
       @footer.stubs(:render).returns("")
