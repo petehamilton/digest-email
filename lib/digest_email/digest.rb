@@ -17,7 +17,7 @@ module DigestEmail
       html = template.gsub '{{content}}', wrap(html)
 
       # Convert any styles to inline
-      premailer = Premailer.new(html, :verbose => true, :debug => true, :with_html_string => true, :warn_level => Premailer::Warnings::RISKY)
+      premailer = Premailer.new(html, :with_html_string => true)
       html = premailer.to_inline_css
 
       # Output any CSS warnings
