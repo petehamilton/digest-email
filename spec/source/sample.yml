@@ -4,9 +4,9 @@ header:
   subsubtitle:
 
 items:
-    - list_title: Awesome Email Digests
+    - list_title: New, Easy Email Digests
       image: https://s3-eu-west-1.amazonaws.com/docsoc/sample/suitcase.jpg
-      title: We have new email digests!
+      title: We have nice simple email digests!
       body: |
         This is an example of a simple digest item.
         In this example it might be for a potential industry placement - for example, check out the rather nice suitcase image on the left
@@ -31,5 +31,5 @@ items:
         For more details contact *[Peter Hamilton](http://peterhamilton.github.com)*
 
 footer:
-  signature: -- Imperial DoCSoc Committee 2012/2013
+  signature: -- DoCSoc Committee 2012
   sponsors_image: https://s3-eu-west-1.amazonaws.com/docsoc/docsocsponsors.jpg # Bottom Sponsor Banner
