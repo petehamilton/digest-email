@@ -2,6 +2,8 @@ require 'digest_email/digest_element'
 
 module DigestEmail
   class DigestElement
+    attr_accessor :children
+
     def initialize
       @children = []
     end
