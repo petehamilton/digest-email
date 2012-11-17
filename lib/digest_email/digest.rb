@@ -13,11 +13,11 @@ module DigestEmail
     end
 
     def render(template = "{{content}}", show_warnings = false)
-      r = super()
-      template.gsub!('{{content}}', r)
+      html = [@header.render(@items.children), @items.render, @footer.render].join
+      html = template.gsub '{{content}}', wrap(html)
 
       # Convert any styles to inline
-      premailer = Premailer.new(template, :with_html_string => true, :warn_level => Premailer::Warnings::SAFE)
+      premailer = Premailer.new(html, :verbose => true, :debug => true, :with_html_string => true, :warn_level => Premailer::Warnings::RISKY)
       html = premailer.to_inline_css
 
       # Output any CSS warnings
@@ -27,7 +27,6 @@ module DigestEmail
           puts "#{w[:message]} (#{w[:level]}) may not render properly in #{w[:clients]}"
         end
       end
-
       html
     end
 
