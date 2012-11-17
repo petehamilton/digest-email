@@ -3,6 +3,8 @@
 This is a project put together in a weekend by [Peter Hamilton](http://peterhamilton.github.com).
 The overall aim was to simplify the process of generating weekly Computing Society emails for students.
 
+The result is a gem which turns [this](https://gist.github.com/4092848) into [this](http://docsoc.s3.amazonaws.com/sample/sample_digest_email.html)
+
 More specifically the aims were:
 - **Fun** - It's not often I have time to make side projects right now. This was a nice non-uni related hack
 - **Learning** - I wanted to do several things - learn more about TDD, create a command line ruby gem etc. This seemed like a great opportunity to tick the boxes
@@ -74,22 +76,11 @@ items:
         This is an example of a simple digest item.
         In this example it might be for a potential industry placement - for example, check out the rather nice suitcase image on the left
 
-        These fields can use markdown so:
-
-        1. We can use lists
-        2. We can *italicize* and **bold** words
-        3. We can easily write [links](http://peterhamilton.github.com)
-
     - list_title: Robotics Hackathon
       image: https://s3-eu-west-1.amazonaws.com/docsoc/sample/walle.jpg
       title: These aren't the droids you're looking for...
       body: |
         Another sample sigest item. This one is all about a fantasy hackathon!
-
-        I imagine it would be held at Imperial and there would be more information [here](#)
-        [here](#) and [here](#)
-
-        Finally there would be the bombshell that it's **TOMORROW!**
 
         For more details contact *[Peter Hamilton](http://peterhamilton.github.com)*
 
