@@ -32,7 +32,15 @@ module DigestEmail
     end
 
     def wrap(inner)
-      "<div class=\"digest\">#{inner}</div>"
+      ["<div class=\"digest\">",
+       "<table>",
+       "<tr>",
+       "<td>",
+       inner,
+       "</td>",
+       "</tr>",
+       "</table>",
+       "</div>"].join
     end
   end
 end
