@@ -1,13 +1,18 @@
 # DigestEmail
 
-This is a project put together in a weekend by [Peter Hamilton](http://peterhamilton.github.com). The aim was to simplify the process of generating weekly Computing Society emails for students.
+This is a project put together in a weekend by [Peter Hamilton](http://peterhamilton.github.com).
+The overall aim was to simplify the process of generating weekly Computing Society emails for students.
+
+More specifically the aims were:
+- **Fun** - It's not often I have time to make side projects right now. This was a nice non-uni related hack
+- **Learning** - I wanted to do several things - learn more about TDD, create a command line ruby gem etc. This seemed like a great opportunity to tick the boxes
+- **Consistency** - Currently everyone provides their digest info in random formats all over the place. Now they can provide the yaml config for their digest entry and I can just combine them all and generate a digest email
+- **Legacy** - I wanted something future society members could use and improve on
 
 ## Background
-  I'm responsible for collating together around 4-6 notices which need to go out to our students each week for jobs/clubs/meetings/events.
+  I'm responsible for collating together around 4-6 notices which need to go out to our students each week for jobs, clubs, meetings and events. I currently have to write raw HTML for each email which involves a lot of Copy-Paste and inline styles and this weekend I decided to find a way to automate the process.
 
-  I currently have to write raw HTML for each email which involves a lot of Copy-Paste and inline styles and this weekend I decided to find a way to automate the process.
-
-  I just collated and generated this weeks digest using this method and I've gone from **2 hours** down to **5 minutes**. I'd call that a success.
+  I just collated and generated this weeks digest using this method and it's gone from taking **2 hours** down to **5 minutes**. I'd call that a success.
 
 ## Installation
 
@@ -51,7 +56,47 @@ Must contain:
   - `signature` - Will be aligned to the right e.g. "DocSoc 2012/2013"
   - `sponsors_image` - A 600px wide hosted image for the bottom of the email
 
-An example Digest file could look something like this: ([github gist](https://gist.github.com/4092848)):
+See below for a full example, also available as a [github gist](https://gist.github.com/4092848)
+```yaml
+# sample_digest_email.yml
+# Parses with the digest_email (http://peterhamilton.github.com/digest_email) gem
+# See the result of running this file through the gem here: http://docsoc.s3.amazonaws.com/sample/sample_digest_email.html
+header:
+  title: "Weekly Digest"
+  subtitle: November 12th 2012
+  subsubtitle:
+
+items:
+    - list_title: New, Easy Email Digests
+      image: https://s3-eu-west-1.amazonaws.com/docsoc/sample/suitcase.jpg
+      title: We have nice simple email digests!
+      body: |
+        This is an example of a simple digest item.
+        In this example it might be for a potential industry placement - for example, check out the rather nice suitcase image on the left
+
+        These fields can use markdown so:
+
+        1. We can use lists
+        2. We can *italicize* and **bold** words
+        3. We can easily write [links](http://peterhamilton.github.com)
+
+    - list_title: Robotics Hackathon
+      image: https://s3-eu-west-1.amazonaws.com/docsoc/sample/walle.jpg
+      title: These aren't the droids you're looking for...
+      body: |
+        Another sample sigest item. This one is all about a fantasy hackathon!
+
+        I imagine it would be held at Imperial and there would be more information [here](#)
+        [here](#) and [here](#)
+
+        Finally there would be the bombshell that it's **TOMORROW!**
+
+        For more details contact *[Peter Hamilton](http://peterhamilton.github.com)*
+
+footer:
+  signature: -- DoCSoc Committee 2012
+  sponsors_image: https://s3-eu-west-1.amazonaws.com/docsoc/docsocsponsors.jpg # Bottom Sponsor Banner
+```
 
 ### 2. Write a template
 An HTML file. The digest email renderer will look for the tag {{content}} and replace it with generated digest html.
