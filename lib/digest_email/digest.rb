@@ -11,7 +11,7 @@ module DigestEmail
       @children = [@header, @items, @footer]
     end
 
-    def render(template)
+    def render(template = "{{content}}")
       r = super()
       template.gsub('{{content}}', r)
     end
