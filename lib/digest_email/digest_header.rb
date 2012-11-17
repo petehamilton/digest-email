@@ -22,7 +22,7 @@ module DigestEmail
       end
     end
 
-    def render
+    def render(items)
       parsed_title = Kramdown::Document.new(@title).to_html
 
       html = ["<div class=\"digest-email-header-title\">#{parsed_title}</div>"]
@@ -41,9 +41,21 @@ module DigestEmail
                  "</div>"]
       end
 
+      # Contents List
+      html << ["<div class=\"digest-email-dot-seperator\"></div>"]
+      html << render_contents_list(items)
       html << ["<div class=\"digest-email-dot-seperator\"></div>"]
 
       wrap html.join("\n")
+    end
+
+    def render_contents_list(items)
+      html =  ["<div class=\"digest-email-header-contents-list\">"]
+      html << ["<ol>"]
+      html << items.map { |item| "<li>\"#{item.list_title}\"</li>" }.join
+      html << ["</ol>"]
+      html << ["</div>"]
+      html.join
     end
 
     def wrap(inner)
