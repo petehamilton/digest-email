@@ -12,7 +12,7 @@ Gem::Specification.new do |gem|
   gem.summary       = %q{Gem to generate a weekly email digest}
   gem.homepage      = ""
 
-  gem.files         = Dir["{lib}/**/*", "{templates}/**/*"]
+  gem.files         = Dir["{lib}/**/*", "{templates}/**/*", "{bin}/**/*"]
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
