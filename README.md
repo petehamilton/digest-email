@@ -18,16 +18,6 @@ The result is a gem which turns [this](https://gist.github.com/4092848) into [th
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-    gem 'digest_email'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
     $ gem install digest_email
 
 ## Usage
