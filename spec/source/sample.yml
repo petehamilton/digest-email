@@ -1,19 +1,35 @@
 header:
-  title: This is a title
+  title: "Weekly Digest"
   subtitle: November 12th 2012
   subsubtitle:
 
 items:
     - list_title: Awesome Email Digests
-      image: images/email.jpg
+      image: https://s3-eu-west-1.amazonaws.com/docsoc/sample/suitcase.jpg
       title: We have new email digests!
-      body: This is some body content
+      body: |
+        This is an example of a simple digest item.
+        In this example it might be for a potential industry placement - for example, check out the rather nice suitcase image on the left
+
+        These fields can use markdown so:
+
+        1. We can use lists
+        2. We can *italicize* and **bold** words
+        3. We can easily write [links](http://peterhamilton.github.com)
 
     - list_title: Robotics Hackathon
-      image: images/skynet.jpg
-      title: These aren't the droids you're looking for
-      body: Imperial is pretty damn awesome. Robots are awesomer.
+      image: https://s3-eu-west-1.amazonaws.com/docsoc/sample/walle.jpg
+      title: These aren't the droids you're looking for...
+      body: |
+        Another sample sigest item. This one is all about a fantasy hackathon!
+
+        I imagine it would be held at Imperial and there would be more information [here](#)
+        [here](#) and [here](#)
+
+        Finally there would be the bombshell that it's **TOMORROW!**
+
+        For more details contact *[Peter Hamilton](http://peterhamilton.github.com)*
 
 footer:
   signature: -- DoCSoc Committee 2012
-  sponsors_image: images/sponsors.jpg # Bottom Sponsor Banner
+  sponsors_image: https://s3-eu-west-1.amazonaws.com/docsoc/docsocsponsors.jpg # Bottom Sponsor Banner
