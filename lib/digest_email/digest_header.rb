@@ -52,7 +52,7 @@ module DigestEmail
     def render_contents_list(items)
       html =  ["<div class=\"digest-email-header-contents-list\">"]
       html << ["<ol>"]
-      html << items.map { |item| "<li>#{item.list_title}</li>" }.join
+      html << items.map { |item| "<li>#{Maruku.new(item.list_title).to_html}</li>" }.join
       html << ["</ol>"]
       html << ["</div>"]
       html.join
