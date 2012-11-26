@@ -110,7 +110,7 @@ Optional:
 For example to generate a digest email from [this template file](https://peterhamilton.github.com/digest-email/blob/master/templates/default.html) (template.html locally) and [this digest file](https://gist.github.com/4092848) (2012-01-01.yml locally) you would type the following:
 
 ```bash
-digest_email -f 2012-01-01.yml -t template.html -o 2012-01-01-digest.html
+digest_email generate -f 2012-01-01.yml -t template.html -o 2012-01-01-digest.html
 2012-11-17 16:08:39 +0000 - Rendering Digest
 2012-11-17 16:08:39 +0000 - Done. Digest saved as /Users/peh10/2012-01-01-digest.html
 ```
