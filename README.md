@@ -84,7 +84,7 @@ An HTML file. The digest email renderer will look for the tag {{content}} and re
 
 If you need to add styling, you may do so in the header and it will be converted to inline styles for email client compatibility.
 
-You can see a sample template at [https://peterhamilton.github.com/digest-email/blob/master/templates/default.html]
+You can see a sample template [here](https://github.com/PeterHamilton/digest-email/blob/master/templates/default.html)
 
 ### 3. Generate
 
